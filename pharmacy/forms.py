@@ -122,9 +122,9 @@ class CategoryForm(forms.ModelForm):
         fields='__all__'
 
 
-class PrescriptionForm(forms.ModelForm):
+class ConsultationForm(forms.ModelForm):
     class Meta:
-        model=Prescription
+        model=Consultation
         fields='__all__' 
 
 class CustomerForm(ModelForm):

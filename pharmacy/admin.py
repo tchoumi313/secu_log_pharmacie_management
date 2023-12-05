@@ -15,7 +15,7 @@ admin.site.register(Stock)
 admin.site.register(Category)
 admin.site.register(Doctor)
 admin.site.register(PharmacyClerk)
-admin.site.register(Prescription)
+admin.site.register(Consultation)
 admin.site.register(Dispense)
 admin.site.register(PatientFeedback)
 

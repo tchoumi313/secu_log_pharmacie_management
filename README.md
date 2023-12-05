@@ -31,7 +31,7 @@
           Administrator Main Features
      - Manage Admissions/Patients
      - Manage System Users
-     - Manage Patient's Prescription
+     - Manage Patient's Consultation
      - Manage Medicinal Drugs Categories
      - Manage Medicinal Drugs
      - Manage Stocks
@@ -78,7 +78,7 @@
 - password: 1234
         
         Doctor Main Featues
-     - Manage Patient's Prescription
+     - Manage Patient's Consultation
      - Manage Personal Account
    
 -----------------------------------------------------------------------------------

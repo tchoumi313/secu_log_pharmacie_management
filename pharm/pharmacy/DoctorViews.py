@@ -64,10 +64,10 @@ def addPrescription(request,pk):
             form=PrescriptionForm(request.POST or None)
             if form.is_valid():
                 form.save()
-                messages.success(request,'Prescription added successfully')
+                messages.success(request,'Consultation added successfully')
                 return redirect('manage_precrip_doctor')
         except:
-            messages.error(request,'Prescription Not Added')
+            messages.error(request,'Consultation Not Added')
             return redirect('manage_patient-doctor')
 
 
@@ -95,10 +95,10 @@ def deletePrescription(request,pk):
     if request.method == 'POST':
         try:
             prescribe.delete()
-            messages.success(request,'Prescription Deleted successfully')
+            messages.success(request,'Consultation Deleted successfully')
             return redirect('manage_precrip_doctor')
         except:
-            messages.error(request,'Prescription Not Deleted successfully')
+            messages.error(request,'Consultation Not Deleted successfully')
             return redirect('manage_precrip_doctor')
 
 
@@ -134,10 +134,10 @@ def editPrescription(request,pk):
             if form.is_valid():
                 form.save()
 
-                messages.success(request,'Prescription Updated successfully')
+                messages.success(request,'Consultation Updated successfully')
                 return redirect('manage_precrip_doctor')
         except:
-            messages.error(request,' Error!! Prescription Not Updated')
+            messages.error(request,' Error!! Consultation Not Updated')
             return redirect('manage_precrip_doctor')
 
 

@@ -69,7 +69,7 @@ urlpatterns=[
     #Doctor
     path('doctor_home/',DoctorViews.doctorHome,name='doctor_home'),
     path('manage_patients/',DoctorViews.managePatients,name='manage_patient_doctor'),
-    path('doctor_prescribe_drug/<str:pk>/',DoctorViews.addPrescription,name='doctor_prescribe2'),
+    path('doctor_prescribe_drug/<str:pk>/', DoctorViews.addConsultation, name='doctor_prescribe2'),
     path('patient_personalDetails/<str:pk>/',DoctorViews.patient_personalDetails,name='patient_record_doctor'),
     path('manage_prescription_doctor/',DoctorViews.managePrescription,name='manage_precrip_doctor'),
     path('doctor_prescribe_delete/<str:pk>/',DoctorViews.deletePrescription,name='doctor_prescrip_delete'),

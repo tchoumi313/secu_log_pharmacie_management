@@ -60,7 +60,7 @@ def patientProfile(request):
 
 
 def myPrescription(request):
-    precrip=Prescription.objects.all()
+    precrip=Consultation.objects.all()
 
     patient = Patients.objects.all()
 

@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from django.core.cache import cache 
 
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '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')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

@@ -51,7 +51,7 @@
                         </div>
 
                     </div>
-                    <table class="table table-bordered table-hover dataTable">
+                    <table class="table table-bordered table-hover dataTable container h-scroll">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -77,7 +77,7 @@
 
                                 <td>{{prescrip.patient_id.last_name}}</td>
                                 <td>{{prescrip.description}}</td>
-                                <td>{{prescrip.prescribe}}</td>
+<!--                                <td>{{prescrip.prescribe}}</td>-->
                                 <td>{{prescrip.date_precribed}}</td>
                                 <td><a href="{% url 'doctor_prescrip_delete' prescrip.id %}" class="btn btn-sm btn-danger">Delete</a>
 

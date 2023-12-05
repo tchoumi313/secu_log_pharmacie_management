@@ -330,7 +330,7 @@ def addCategory(request):
     return render(request,'hod_templates/add_category.html',context)
 
 def addPrescription(request):
-    form=PrescriptionForm(request.POST or None)
+    form=ConsultationForm(request.POST or None)
     if form.is_valid():
         form.save()
         return redirect('prescribe')
@@ -432,7 +432,7 @@ def patient_personalRecords(request,pk):
     return render(request,'hod_templates/patient_personalRecords.html',context)
 
 def deletePrescription(request,pk):
-    prescribe=Prescription.objects.get(id=pk)
+    prescribe=Consultation.objects.get(id=pk)
     if request.method == 'POST':
         prescribe.delete()
         return redirect('all_patients')

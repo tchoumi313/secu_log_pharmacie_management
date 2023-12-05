@@ -17,6 +17,24 @@ class CustomUser(AbstractUser):
     user_type_data = ((1, "AdminHOD"), (2, "Pharmacist"), (3, "Doctor"), (4, "PharmacyClerk"),(5, "Patients"))
     user_type = models.CharField(default=1, choices=user_type_data, max_length=10)
 
+from django.db import models
+class Symptome(models.Model):
+    nom_symptome = models.CharField(max_length=255)
+
+
+class Maladie(models.Model):
+    nom_maladie = models.CharField(max_length=255)
+
+
+class Correspondance(models.Model):
+    symptome = models.ForeignKey(Symptome, on_delete=models.CASCADE)
+    maladie = models.ForeignKey(Maladie, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('symptome', 'maladie')
+
+
+
 class Patients(models.Model):
     gender_category=(
         ('Male','Male'),
@@ -126,11 +144,16 @@ class Category(models.Model):
 	
 
     
-class Prescription(models.Model):
+class Consultation(models.Model):
     patient_id = models.ForeignKey(Patients,null=True, on_delete=models.SET_NULL)
-    description=models.TextField(null=True)
-    prescribe=models.CharField(max_length=100,null=True)
+    #description=models.TextField(null=True)
+    #prescribe=models.CharField(max_length=100,null=True)
     date_precribed=models.DateTimeField(auto_now_add=True, auto_now=False)
+    poids = models.FloatField(default=0.0)  # Add poids field with default value 0.0
+    temperature = models.FloatField(default=0.0)  # Add temperature field with default value 0.0
+    antecedents_medicaux = models.TextField(null=True)
+    symptoms = models.TextField(null=True)  # Add symptoms field
+    allergies = models.TextField(null=True)  # Add allergies field
 
 
 
